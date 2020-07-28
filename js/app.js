@@ -16,6 +16,20 @@
 	// 		completed:true
 	// 	},
 	// ]
+	// 聚焦
+	Vue.directive('focus',{
+		inserted:function(el){
+			el.focus()
+		}	
+	})
+	Vue.directive('todo-focus',{
+		update:function(el,binding){
+			if(binding.value){
+				el.focus()
+			}
+		}	
+	})
+
 	window.vm=new Vue({
 		el:'#app',
 		data:{
